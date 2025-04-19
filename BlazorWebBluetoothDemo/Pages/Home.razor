@@ -118,13 +118,17 @@
     }
     async void Device_OnGATTServerDisconnected(Event e)
     {
-        await DisconnectClick();
+        if (connected)
+        {
+            await DisconnectClick();
+        }
         StateHasChanged();
     }
     async Task DisconnectClick()
     {
-        bleState = "Disconnected";
+        if (!connected) return;
         connected = false;
+        bleState = "Disconnected";
         if (sensorCharacteristicFound != null)
         {
             sensorCharacteristicFound.OnCharacteristicValueChanged -= SensorCharacteristicFound_OnCharacteristicValueChanged;
@@ -144,6 +148,7 @@
         {
             if (bleServer.Connected)
             {
+                // this will cause Device_OnGATTServerDisconnected to fire.
                 bleServer.Disconnect();
             }
             bleServer.Dispose();
