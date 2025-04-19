@@ -79,7 +79,10 @@
     }
     async Task ConnectClick()
     {
-        await DisconnectClick();
+        if (connected)
+        {
+            await DisconnectClick();
+        }
         try
         {
             using var navigator = JS.Get<Navigator>("navigator");
