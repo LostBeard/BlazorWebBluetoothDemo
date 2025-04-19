@@ -6,8 +6,8 @@
 <PageTitle>ESP32 Web BLE Application</PageTitle>
 
 <h1>ESP32 Web BLE Application</h1>
-<button disabled="@(!isWebBluetoothEnabled && device == null)" @onclick=ConnectClick>Connect to BLE Device</button>
-<button disabled="@(device != null)" @onclick=DisconnectClick>Disconnect BLE Device</button>
+<button disabled="@(!isWebBluetoothEnabled || device != null)" @onclick=ConnectClick>Connect to BLE Device</button>
+<button disabled="@(device == null)" @onclick=DisconnectClick>Disconnect BLE Device</button>
 <p>BLE state: <strong><span style="color:#d13a30;">@bleState</span></strong></p>
 <h2>Fetched Value</h2>
 <p><span>@retrievedValue</span></p>
