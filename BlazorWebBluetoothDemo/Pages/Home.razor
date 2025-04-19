@@ -58,6 +58,14 @@
             using var navigator = JS.Get<Navigator>("navigator");
             using var bluetooth = navigator.Bluetooth;
             isWebBluetoothEnabled = bluetooth != null;
+            if (!isWebBluetoothEnabled)
+            {
+                bleState = "Web Bluetooth not supported";
+            }
+            else
+            {
+                bleState = "Web Bluetooth supported";
+            })
             StateHasChanged();
         }
     }
