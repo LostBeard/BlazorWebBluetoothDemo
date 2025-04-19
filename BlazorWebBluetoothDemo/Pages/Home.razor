@@ -100,7 +100,7 @@
             using var test = await sensorCharacteristicFound.JSRef!.CallAsync<JSObject>("readValue");
             using var value = await sensorCharacteristicFound.ReadValue();
             // TODO - check if TextDecoder.Decode() can accept a DataView, and byte arrays (and therefore Uint8Array)
-            retrievedValue = textDecoder.Decode(value.Buffer);
+            retrievedValue = textDecoder!.Decode(value.Buffer);
             timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
         catch (Exception ex)
@@ -110,20 +110,15 @@
     }
     void SensorCharacteristicFound_OnCharacteristicValueChanged(Event e)
     {
-        // TODO check the event type is Event
         using var characteristic = e.TargetAs<BluetoothRemoteGATTCharacteristic>();
-        JS.Log("SensorCharacteristicFound_OnCharacteristicValueChanged", e);
-        JS.Set("_SensorCharacteristicFound_OnCharacteristicValueChanged", e);
         using var value = characteristic.Value;
-        retrievedValue = textDecoder.Decode(value.Buffer);
+        retrievedValue = textDecoder!.Decode(value.Buffer);
         timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         StateHasChanged();
     }
-    void Device_OnGATTServerDisconnected(Event e)
+    async void Device_OnGATTServerDisconnected(Event e)
     {
-        // TODO check the event type is Event
-        JS.Log("Device_OnGATTServerDisconnected", e);
-        JS.Set("_Device_OnGATTServerDisconnected", e);
+        await DisconnectClick();
         StateHasChanged();
     }
     async Task DisconnectClick()
@@ -133,14 +128,15 @@
         if (sensorCharacteristicFound != null)
         {
             sensorCharacteristicFound.OnCharacteristicValueChanged -= SensorCharacteristicFound_OnCharacteristicValueChanged;
-            await sensorCharacteristicFound.StopNotifications();
-
+            if (bleServer?.Connected == true)
+            {
+                await sensorCharacteristicFound.StopNotifications();
+            }
             sensorCharacteristicFound.Dispose();
             sensorCharacteristicFound = null;
         }
         if (bleServiceFound != null)
         {
-
             bleServiceFound.Dispose();
             bleServiceFound = null;
         }
@@ -148,10 +144,7 @@
         {
             if (bleServer.Connected)
             {
-                // TODO check if test is null or a Promise and fix SpawnDev.BlazorJS.JSObjects.BluetoothRemoteGATTServer is needed
-                var test = bleServer.JSRef!.Call<JSObject>("disconnect");
-                JS.Log("_disconnect", test);
-                JS.Set("_disconnect", test);
+                bleServer.Disconnect();
             }
             bleServer.Dispose();
             bleServer = null;
@@ -159,7 +152,6 @@
         if (device != null)
         {
             device.OnGATTServerDisconnected -= Device_OnGATTServerDisconnected;
-
             device.Dispose();
             device = null;
         }
