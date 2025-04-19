@@ -1,0 +1,187 @@
+﻿@page "/"
+@using SpawnDev.BlazorJS
+@using SpawnDev.BlazorJS.JSObjects
+
+<PageTitle>ESP32 Web BLE Application</PageTitle>
+
+<h1>ESP32 Web BLE Application</h1>
+<button disabled="@(!isWebBluetoothEnabled)" @onclick=ConnectClick>Connect to BLE Device</button>
+<button @onclick=DisconnectClick>Disconnect BLE Device</button>
+<p>BLE state: <strong><span style="color:#d13a30;">@bleState</span></strong></p>
+<h2>Fetched Value</h2>
+<p><span>@retrievedValue</span></p>
+<p>Last reading: <span>@timestamp</span></p>
+<h2>Control GPIO 2</h2>
+<button @onclick=OnClick>ON</button>
+<button @onclick=OffClick>OFF</button>
+<p>Last value sent: <span>@valueSent</span></p>
+
+<div>
+    <h2>References</h2>
+    <ul>
+        <li><a href="https://randomnerdtutorials.com/esp32-web-bluetooth/">ESP32 Web Bluetooth (BLE): Getting Started Guide</a></li>
+        <li><a href="https://googlechrome.github.io/samples/web-bluetooth/discover-services-and-characteristics.html">Web Bluetooth / Discover Services & Characteristics Sample</a></li>
+    </ul>
+</div>
+
+@code
+{
+    [Inject]
+    BlazorJSRuntime JS { get; set; } = default!;
+
+    bool isWebBluetoothEnabled = false;
+    string retrievedValue = "NaN";
+    string valueSent = "";
+    string timestamp = "";
+    string bleState = "Disconnected";
+
+    //Define BLE Device Specs
+    string deviceName = "ESP32";
+    string bleService = "19b10000-e8f2-537e-4f6c-d104768a1214";
+    string ledCharacteristic = "19b10002-e8f2-537e-4f6c-d104768a1214";
+    string sensorCharacteristic = "19b10001-e8f2-537e-4f6c-d104768a1214";
+
+    //Global Variables to Handle Bluetooth
+    BluetoothDevice? device;
+    BluetoothRemoteGATTServer? bleServer;
+    BluetoothRemoteGATTService? bleServiceFound;
+    BluetoothRemoteGATTCharacteristic? sensorCharacteristicFound;
+    bool connected = false;
+
+    TextDecoder textDecoder = new TextDecoder();
+
+    async Task OnClick()
+    {
+        await WriteOnCharacteristic(1);
+    }
+    async Task OffClick()
+    {
+        await WriteOnCharacteristic(0);
+    }
+    async Task ConnectClick()
+    {
+        await DisconnectClick();
+        try
+        {
+            using var navigator = JS.Get<Navigator>("navigator");
+            using var bluetooth = navigator.Bluetooth;
+            device = await bluetooth!.RequestDevice(new BluetoothDeviceOptions
+                {
+                    AcceptAllDevices = true,
+                    OptionalServices = new string[] { bleService }
+                });
+            device.OnGATTServerDisconnected += Device_OnGATTServerDisconnected;
+            JS.Log("_device", device, device.Name);
+            JS.Set("_device", device);
+            bleState = $"Connected to device {device.Name}";
+            bleServer = await device.GATT!.Connect();
+            JS.Log("_bleServer", bleServer);
+            JS.Set("_bleServer", bleServer);
+            bleServiceFound = await bleServer.GetPrimaryService(bleService);
+            JS.Log("_bleServiceFound", bleServiceFound);
+            JS.Set("_bleServiceFound", bleServiceFound);
+            sensorCharacteristicFound = await bleServiceFound.GetCharacteristic(sensorCharacteristic);
+            JS.Log("_sensorCharacteristicFound", sensorCharacteristicFound);
+            JS.Set("_sensorCharacteristicFound", sensorCharacteristicFound);
+            sensorCharacteristicFound.OnCharacteristicValueChanged += SensorCharacteristicFound_OnCharacteristicValueChanged;
+            await sensorCharacteristicFound.StartNotifications();
+            connected = true;
+
+            using var test = await sensorCharacteristicFound.JSRef!.CallAsync<JSObject>("readValue");
+            JS.Log("_test", test);
+            JS.Set("_test", test);
+
+            using var value = await sensorCharacteristicFound.ReadValue();
+            JS.Log("_value", bleServer);
+            JS.Set("_value", bleServer);
+            // TODO - check if TextDecoder.Decode() can accept a DataView, and byte arrays (and therefore Uint8Array)
+            retrievedValue = textDecoder.Decode(value.Buffer);
+            timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            var nmt = true;
+        }
+        catch (Exception ex)
+        {
+            JS.Log("ConnectClick failed:", ex.Message, ex.StackTrace);
+        }
+    }
+    void SensorCharacteristicFound_OnCharacteristicValueChanged(Event e)
+    {
+        using var characteristic = e.TargetAs<BluetoothRemoteGATTCharacteristic>();
+        JS.Log("SensorCharacteristicFound_OnCharacteristicValueChanged", e);
+        JS.Set("_SensorCharacteristicFound_OnCharacteristicValueChanged", e);
+        using var value = characteristic.Value;
+        retrievedValue = textDecoder.Decode(value.Buffer);
+        timestamp = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        var nmt = true;
+        StateHasChanged();
+    }
+    void Device_OnGATTServerDisconnected(Event e)
+    {
+        JS.Log("Device_OnGATTServerDisconnected", e);
+        JS.Set("_Device_OnGATTServerDisconnected", e);
+        var nmt = true;
+        StateHasChanged();
+    }
+    async Task DisconnectClick()
+    {
+        connected = false;
+        if (sensorCharacteristicFound != null)
+        {
+            sensorCharacteristicFound.OnCharacteristicValueChanged -= SensorCharacteristicFound_OnCharacteristicValueChanged;
+            await sensorCharacteristicFound.StopNotifications();
+
+            sensorCharacteristicFound.Dispose();
+            sensorCharacteristicFound = null;
+        }
+        if (bleServiceFound != null)
+        {
+
+            bleServiceFound.Dispose();
+            bleServiceFound = null;
+        }
+        if (bleServer != null)
+        {
+            if (bleServer.Connected)
+            {
+                // check is test is null or a Promise and fix SpawnDev.BlazorJS.JSObjects.BluetoothRemoteGATTServer is needed
+                var test = bleServer.JSRef!.Call<JSObject>("disconnect");
+                JS.Log("_disconnect", test);
+                JS.Set("_disconnect", test);
+                var nmt = true;
+            }
+            bleServer.Dispose();
+            bleServer = null;
+        }
+        if (device != null)
+        {
+            device.OnGATTServerDisconnected -= Device_OnGATTServerDisconnected;
+
+            device.Dispose();
+            device = null;
+        }
+    }
+
+    async Task WriteOnCharacteristic(byte value)
+    {
+        if (bleServer != null && bleServer.Connected && bleServiceFound != null)
+        {
+            var characteristic = await bleServiceFound.GetCharacteristic(ledCharacteristic);
+            var data = new byte[] { value };
+            await characteristic.WriteValueWithoutResponse(data);
+            valueSent = value == 1 ? "ON" : "OFF";
+            StateHasChanged();
+        }
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            using var navigator = JS.Get<Navigator>("navigator");
+            using var bluetooth = navigator.Bluetooth;
+            isWebBluetoothEnabled = bluetooth != null;
+            StateHasChanged();
+        }
+
+    }
+}
