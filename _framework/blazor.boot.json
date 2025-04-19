@@ -1,9 +1,9 @@
 {
   "mainAssemblyName": "BlazorWebBluetoothDemo",
   "resources": {
-    "hash": "sha256-ocnIua2yHr3MR2/Q6PdsE2U3c0PDRLlci/3uLKDJr0Q=",
+    "hash": "sha256-33W6LLT/jsvhb+bjPzWXd1ipd5BgRM2yB47QBPplBWw=",
     "fingerprinting": {
-      "BlazorWebBluetoothDemo.qyty67o89s.wasm": "BlazorWebBluetoothDemo.wasm",
+      "BlazorWebBluetoothDemo.oelk8d2dj1.wasm": "BlazorWebBluetoothDemo.wasm",
       "Microsoft.AspNetCore.Components.d5po27sdue.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.2yj94ckvak.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.sgbqg9g0bx.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
@@ -38,7 +38,7 @@
       "System.Runtime.InteropServices.JavaScript.era55l3sbb.wasm": "System.Runtime.InteropServices.JavaScript.wasm",
       "System.Runtime.InteropServices.rzensxptfk.wasm": "System.Runtime.InteropServices.wasm",
       "System.Runtime.Numerics.hmg0v5iu1k.wasm": "System.Runtime.Numerics.wasm",
-      "System.Runtime.f0hux6fb32.wasm": "System.Runtime.wasm",
+      "System.Runtime.c6qz5r0cqr.wasm": "System.Runtime.wasm",
       "System.Security.Cryptography.yc6odiz6j4.wasm": "System.Security.Cryptography.wasm",
       "System.Text.Encodings.Web.wmi2z5c0zd.wasm": "System.Text.Encodings.Web.wasm",
       "System.Text.Json.vj9fmqnjaf.wasm": "System.Text.Json.wasm",
@@ -71,7 +71,7 @@
       "System.Runtime.InteropServices.JavaScript.era55l3sbb.wasm": "sha256-uo4WQ39eiOB+w/weMzCVCfXQey09VlzpTm+e6aR83IA="
     },
     "assembly": {
-      "BlazorWebBluetoothDemo.qyty67o89s.wasm": "sha256-Mo6x/hmVvXFV2XoL845eyQYsvzl0LS7+cpD8Tb+LKx8=",
+      "BlazorWebBluetoothDemo.oelk8d2dj1.wasm": "sha256-YGUE6aKM4GgNkDndxd/0kZbodJG3B29FwY9nakRe7jI=",
       "Microsoft.AspNetCore.Components.d5po27sdue.wasm": "sha256-r6ybJih2xs7Lv478aIiZA+CLMzoTUxmQt0jxsW1IQTY=",
       "Microsoft.AspNetCore.Components.Web.2yj94ckvak.wasm": "sha256-OgGeBYimSBEuOUdq3POIEdC3NdVUCkk/K6ELdHHVBfs=",
       "Microsoft.AspNetCore.Components.WebAssembly.sgbqg9g0bx.wasm": "sha256-dG/zQK3hrNaSkV456Z/t1pVrZFql2xOwiSIwuJoy1n0=",
@@ -104,7 +104,7 @@
       "System.Reflection.DispatchProxy.2x2cnacg22.wasm": "sha256-xjgjE0SGzu9zmBzXOHr1nuTYwor7kX2c0C+D8jPWEBQ=",
       "System.Runtime.InteropServices.rzensxptfk.wasm": "sha256-WcTNL/VcY3SgMxaMPTg7aDt7siUELIuyQCfdcEQ3A4E=",
       "System.Runtime.Numerics.hmg0v5iu1k.wasm": "sha256-11jkWzzvdMDGFjNLnqJEjwcG/f3RWiQwp4BNyZZ1ILw=",
-      "System.Runtime.f0hux6fb32.wasm": "sha256-YQVjU1COXSqhEbhS5Yn/tqwSit7as8gEETm8NiaSENQ=",
+      "System.Runtime.c6qz5r0cqr.wasm": "sha256-vB+GxtopV3j3SF9+ZAokX6Iy+hCGFnT/K3XDufwHYtc=",
       "System.Security.Cryptography.yc6odiz6j4.wasm": "sha256-MpuVQEvVhEYdJMBHDoPRbxwVsW81oLnMhxZqHFW47YQ=",
       "System.Text.Encodings.Web.wmi2z5c0zd.wasm": "sha256-KD5saNzkpUD3A/RXlqBthi/qKA3Sk2nZuNvyfL9+EWc=",
       "System.Text.Json.vj9fmqnjaf.wasm": "sha256-5XMtbQAMC9Km3UIX0nZkbQ5w15AdZlO3HjiJZys+UHU=",
