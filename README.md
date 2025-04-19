@@ -6,8 +6,8 @@ Based on a Javascript version:
 
 # ESP32 Code
 The folder `ESP32BLEApp` contains a [PlatformIO VSCode](https://platformio.org/install/ide?install=vscode) project for an ESP32-S3-WROOM microcontroller that will act as a BLE server. 
-The ESP32 app is written using the C/C++.
-The ESP32 will advertise a service with a characteristic that can be read and written to by the Blazor WebAssembly application. No wiring is required for this demo. An onboard LED can be toggle on and off using the Blazor WASM web app and data can be retrieved automatically when it changes.
+The ESP32 app is written using C/C++.
+The ESP32 will advertise a service with a characteristic that can be read and written to by the Blazor WebAssembly application. No wiring is required for this demo. An onboard LED can be toggled on and off using the Blazor WASM app and data is retrieved automatically when it changes.
 I specifically tested using the [Freenove Basic Starter Kit for ESP32-S3-WROOM CAM](https://store.freenove.com/products/fnk0084).
 
 # Help and Issues
