@@ -19,7 +19,7 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 
 ## Introduction
 
-The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WASM web application and an ESP32-S3 using Bluetooth Low Enery commincation via the Web Bluetooth API. With SpawnDev.BlazorJS, you can create Blazor WASM web pages that interact with various Bluetooth Low Energy (BLE) devices. This project aims to demonstrate the integration of Bluetooth technology into web applications, making it accessible for developers of all skill levels.
+The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WASM web application and an ESP32-S3 using Bluetooth Low Enery commincation via the Web Bluetooth API. With [SpawnDev.BlazorJS](https://github.com/LostBeard/SpawnDev.BlazorJS), you can create Blazor WASM web pages that interact with various Bluetooth Low Energy (BLE) devices. This project aims to demonstrate the integration of Bluetooth technology into web applications, making it accessible for developers of all skill levels.
 
 ## Features
 
@@ -63,7 +63,8 @@ This project uses the following technologies:
 - **Blazor WebAssembly**: A framework for building interactive web applications using C#.
 - **Web Bluetooth API**: A JavaScript API that allows web applications to communicate with Bluetooth devices.
 - **ESP32-S3-WROOM**: A powerful microcontroller with built-in Bluetooth capabilities.
-- **C#**: The primary programming language used in this project.
+- **C#**: The primary programming language used for the Blazor WASM project.
+- **C/C++**: The primary programming language used for the ESP32-S3 project.
 - **HTML/CSS**: For building the user interface.
 
 ## Contributing
