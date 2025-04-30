@@ -28,7 +28,7 @@ The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WA
 ## ESP32-S3-WROOM
 This project uses the ESP32-S3-WROOM microcontroller board, which is a powerful and versatile platform for building IoT applications. The ESP32-S3 features built-in Bluetooth Low Energy (BLE) capabilities, making it an ideal choice for this demo.  
 
-![ESP32-S3-WROOM Board](https://raw.githubusercontent.com/LostBeard/BlazorWebBluetoothDemo/main/BlazorWebBluetoothDemo/wwwroot/ESP32-S3-WROOM.jpg)
+![ESP32-S3-WROOM Board](https://raw.githubusercontent.com/LostBeard/BlazorWebBluetoothDemo/master/BlazorWebBluetoothDemo/wwwroot/ESP32-S3-WROOM.jpg)
 
 
 ## Project Structure
