@@ -16,7 +16,7 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 - [Contact](#contact)
 
 ## Live Demo 
-- Run the `ESP32BLEApp` on your ESP32-S3-WROOM board
+- Run the `ESP32BLEApp` app on your ESP32-S3-WROOM board
 - Run the [Live Demo](https://lostbeard.github.io/BlazorWebBluetoothDemo/)
 
 ## Introduction
