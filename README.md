@@ -15,6 +15,10 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 - [License](#license)
 - [Contact](#contact)
 
+## Live Demo 
+- Run the `ESP32BLEApp` on your ESP32-S3-WROOM board
+- Run the [Live Demo](https://lostbeard.github.io/BlazorWebBluetoothDemo/)
+
 ## Introduction
 
 - The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WASM web application and an ESP32-S3 using Bluetooth Low Energy communication via the [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API). 
