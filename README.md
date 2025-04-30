@@ -27,12 +27,12 @@ The `BlazorWebBluetoothDemo` project is a Blazor WebAssembly project that provid
 - Open the `BlazorWebBluetoothDemo` project in Visual Studio.
 - Build and run the Blazor WebAssembly project to start the demo in a new browser window.
 - Click `Connect to BLE Device` to `Pair` your ESP32-S3-WROOM board using the web app. Select `ESP32` from the list of Bluetooth devices.
-- Click the `ON` and `OFF` buttons to control the ESP32's onboard LED accessed via antoher Charateristic.
 - The Blazor app will:
   - Request a specific GATT service running on the ESP32.
   - Get a specific Characteristic from that GATT service.
   - Read the Characteristic's current value.
   - Subscribe to value change events for that Characteristic and update the value shown.
+- Click the `ON` and `OFF` buttons to control the ESP32's onboard LED accessed via another Charateristic.
 
 ## Features
 
