@@ -35,7 +35,7 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
   - Get a specific Characteristic from that GATT service.
   - Read the Characteristic's current value.
   - Subscribe to value change events for that Characteristic and update the value shown.
-- Click the `ON` and `OFF` buttons to control the ESP32's onboard LED accessed via another Charateristic.
+- Click the `ON` and `OFF` buttons to control the ESP32's onboard LED accessed via another Characteristic.
 
 ## Features
 
@@ -111,7 +111,7 @@ We welcome contributions to enhance the **Blazor Web Bluetooth Demo**. If you ha
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License.
 
 ## Contact
 
