@@ -31,7 +31,7 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 
 - Clone the repo.
 - Upload and run the `ESP32BLEApp` project on your ESP32-S3-WROOM board using [PlatformIO](https://platformio.org/install/ide?install=vscode).
-- The ESP32 will run a BLE GATT service with two characteristics:
+- The ESP32 app will run a BLE GATT service with two characteristics:
   - `LED` - used to control the onboard LED.
   - `Sensor` - used to read the current value of a fake sensor.
 - Open the `BlazorWebBluetoothDemo` project in Visual Studio.
