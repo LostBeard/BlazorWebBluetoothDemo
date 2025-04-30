@@ -17,9 +17,10 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 
 ## Introduction
 
-The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WASM web application and an ESP32-S3 using Bluetooth Low Enery commincation via the Web Bluetooth API. With [SpawnDev.BlazorJS](https://github.com/LostBeard/SpawnDev.BlazorJS), you can create Blazor WASM web pages that interact with Bluetooth Low Energy (BLE) devices. 
-The `ESP32BLEApp` project is a PlatformIO project that runs on the ESP32-S3-WROOM board and serves as the backend for the web application. The web app allows users to connect to BLE devices, send commands, and receive data in real-time.
-The `BlazorWebBluetoothDemo` project is a Blazor WebAssembly project that provides the user interface for the demo. It includes pages for connecting to BLE devices, sending commands, and displaying received data. The web app uses the Web Bluetooth API to establish a connection with the ESP32-S3 and communicate with it.
+The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WASM web application and an ESP32-S3 using Bluetooth Low Enery communication via the Web Bluetooth API. 
+With [SpawnDev.BlazorJS](https://github.com/LostBeard/SpawnDev.BlazorJS), you can create Blazor WASM web pages that interact with Bluetooth Low Energy (BLE) devices. 
+The `ESP32BLEApp` is a [VSCode with PlatformIO](https://platformio.org/install/ide?install=vscode) project that runs on the ESP32-S3-WROOM board and runs a GATT service that provides access to data and control over GPIO pins. 
+The `BlazorWebBluetoothDemo` is a Blazor WebAssembly project uses the Web Bluetooth API to communicate with the GATT service running on the ESP32 wirelessly.
 
 ## Getting Started
 
