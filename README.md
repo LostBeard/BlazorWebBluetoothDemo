@@ -22,6 +22,7 @@ The `ESP32BLEApp` project is a PlatformIO project that runs on the ESP32-S3-WROO
 The `BlazorWebBluetoothDemo` project is a Blazor WebAssembly project that provides the user interface for the demo. It includes pages for connecting to BLE devices, sending commands, and displaying received data. The web app uses the Web Bluetooth API to establish a connection with the ESP32-S3 and communicate with it.
 
 ## Getting Started
+
 - Clone the repo.
 - Upload the `ESP32BLEApp` project to your ESP32-S3-WROOM board using [PlatformIO](https://platformio.org/install/ide?install=vscode).
 - Open the `BlazorWebBluetoothDemo` project in Visual Studio.
