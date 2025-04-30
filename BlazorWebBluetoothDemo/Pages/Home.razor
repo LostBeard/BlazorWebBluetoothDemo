@@ -9,10 +9,10 @@
 <button disabled="@(!isWebBluetoothEnabled || device != null)" @onclick=ConnectClick>Connect to BLE Device</button>
 <button disabled="@(device == null)" @onclick=DisconnectClick>Disconnect BLE Device</button>
 <p>BLE state: <strong><span style="color:#d13a30;">@bleState</span></strong></p>
-<h2>Fetched Value</h2>
+<h2>Current Value</h2>
 <p><span>@retrievedValue</span></p>
 <p>Last reading: <span>@timestamp</span></p>
-<h2>Control GPIO 2</h2>
+<h2>Build in LED</h2>
 <button disabled="@(!connected)" @onclick=OnClick>ON</button>
 <button disabled="@(!connected)" @onclick=OffClick>OFF</button>
 <p>Last value sent: <span>@valueSent</span></p>

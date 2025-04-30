@@ -16,7 +16,18 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 
 ## Introduction
 
-The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WASM web application and an ESP32-S3 using Bluetooth Low Enery commincation via the Web Bluetooth API. With [SpawnDev.BlazorJS](https://github.com/LostBeard/SpawnDev.BlazorJS), you can create Blazor WASM web pages that interact with Bluetooth Low Energy (BLE) devices. This project aims to demonstrate the integration of Bluetooth technology into web applications, making it accessible for developers of all skill levels.
+The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WASM web application and an ESP32-S3 using Bluetooth Low Enery commincation via the Web Bluetooth API. With [SpawnDev.BlazorJS](https://github.com/LostBeard/SpawnDev.BlazorJS), you can create Blazor WASM web pages that interact with Bluetooth Low Energy (BLE) devices. 
+The `ESP32BLEApp` project is a PlatformIO project that runs on the ESP32-S3-WROOM board and serves as the backend for the web application. The web app allows users to connect to BLE devices, send commands, and receive data in real-time.
+The `BlazorWebBluetoothDemo` project is a Blazor WebAssembly project that provides the user interface for the demo. It includes pages for connecting to BLE devices, sending commands, and displaying received data. The web app uses the Web Bluetooth API to establish a connection with the ESP32-S3 and communicate with it.
+
+## Getting Started
+- Upload the `ESP32BLEApp` project to your ESP32-S3-WROOM board using PlatformIO. Make sure to install the required libraries and dependencies. You can find the instructions for setting up PlatformIO [here](https://platformio.org/install).
+- Open the `BlazorWebBluetoothDemo` project in your preferred IDE (e.g., Visual Studio, Visual Studio Code).
+- Build and run the Blazor WebAssembly project. You can use the built-in development server or publish it to a web server.
+- Open the web application in a compatible web browser (e.g., Chrome, Edge) that supports the Web Bluetooth API.
+- Click `Connect to BLE Device` to `Pair` your ESP32-S3-WROOM board using the web app. You should see a list of available BLE devices as `ESP32`.
+- The Blazor app will connect to a GATT service running on the ESP32 and receive updated values from the ESP32 about once per second.
+- Click the `ON` and `OFF` buttons to control the ESP32's on board LED
 
 ## Features
 
