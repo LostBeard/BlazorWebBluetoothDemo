@@ -58,11 +58,12 @@ BlazorWebBluetoothDemo/                 # Blazor WebAsembly project
 This project uses the following technologies:
 
 - **Blazor WebAssembly**: A framework for building interactive web applications using C#.
-- **Web Bluetooth API**: A JavaScript API that allows web applications to communicate with Bluetooth devices.
-- **ESP32-S3-WROOM**: A powerful microcontroller with built-in Bluetooth capabilities.
 - **C#**: The primary programming language used for the Blazor WASM project.
-- **C/C++**: The primary programming language used for the ESP32-S3 project.
 - **HTML/CSS**: For building the user interface.
+- **Web Bluetooth API**: A JavaScript API that allows web applications to communicate with Bluetooth devices.
+- **[PlatformIO](https://platformio.org/)**: A framework for building interactive web applications using C#.
+- **C/C++**: The primary programming language used for the ESP32-S3 project.
+- **[ESP32-S3-WROOM](https://store.freenove.com/products/fnk0085)**: A powerful microcontroller with built-in Bluetooth capabilities.
 
 ## Contributing
 
