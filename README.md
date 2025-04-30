@@ -38,7 +38,7 @@ ESP32BLEApp/                            # ESP32 PlatformIO project
 │   ├── main.cpp                        # Entry point
 ├── test/                               # PlatformIO test runner files
 ├── sdkconfig.freenove_esp32_s3_wroom   # PlatformIO test runner files
-└── platformio.ini                      # PlatofrmIO confiuration file
+└── platformio.ini                      # PlatformIO confiuration file
 BlazorWebBluetoothDemo/                 # Blazor WebAsembly project
 ├── wwwroot/                            # Static files
 │   ├── css/                            # Stylesheets
