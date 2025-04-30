@@ -25,6 +25,12 @@ The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WA
 - **Blazor WebAssembly**: Build interactive web applications using C# and .NET.
 - **Real-time Data Exchange**: Send and receive data between the web app and Bluetooth devices.
 
+## ESP32-S3-WROOM
+This project uses the ESP32-S3-WROOM microcontroller board, which is a powerful and versatile platform for building IoT applications. The ESP32-S3 features built-in Bluetooth Low Energy (BLE) capabilities, making it an ideal choice for this demo.  
+
+![ESP32-S3-WROOM Board](https://raw.githubusercontent.com/LostBeard/BlazorWebBluetoothDemo/main/BlazorWebBluetoothDemo/wwwroot/ESP32-S3-WROOM.jpg)
+
+
 ## Project Structure
 
 The project is organized as follows:
