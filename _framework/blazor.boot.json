@@ -1,9 +1,9 @@
 {
   "mainAssemblyName": "BlazorWebBluetoothDemo",
   "resources": {
-    "hash": "sha256-a3dwZvB3lGwF+0MydR9ETAuWCnKZ47odYvLXfaQkJjw=",
+    "hash": "sha256-GuM6hjF43Ye35R4cZAW14wCPG576LXf7OVxL14TaERY=",
     "fingerprinting": {
-      "BlazorWebBluetoothDemo.wl3wboy81v.wasm": "BlazorWebBluetoothDemo.wasm",
+      "BlazorWebBluetoothDemo.eeh7v22pi7.wasm": "BlazorWebBluetoothDemo.wasm",
       "Microsoft.AspNetCore.Components.d5po27sdue.wasm": "Microsoft.AspNetCore.Components.wasm",
       "Microsoft.AspNetCore.Components.Web.2yj94ckvak.wasm": "Microsoft.AspNetCore.Components.Web.wasm",
       "Microsoft.AspNetCore.Components.WebAssembly.sgbqg9g0bx.wasm": "Microsoft.AspNetCore.Components.WebAssembly.wasm",
@@ -71,7 +71,7 @@
       "System.Runtime.InteropServices.JavaScript.era55l3sbb.wasm": "sha256-uo4WQ39eiOB+w/weMzCVCfXQey09VlzpTm+e6aR83IA="
     },
     "assembly": {
-      "BlazorWebBluetoothDemo.wl3wboy81v.wasm": "sha256-vLoAUnZ0n4GG64fIv3dIea3WJnBE7QqZOnhudbAT+Pk=",
+      "BlazorWebBluetoothDemo.eeh7v22pi7.wasm": "sha256-KoW6Le4hc0Xp9141S1h2lr+SHprP4vCJZ6VSqXOucfE=",
       "Microsoft.AspNetCore.Components.d5po27sdue.wasm": "sha256-r6ybJih2xs7Lv478aIiZA+CLMzoTUxmQt0jxsW1IQTY=",
       "Microsoft.AspNetCore.Components.Web.2yj94ckvak.wasm": "sha256-OgGeBYimSBEuOUdq3POIEdC3NdVUCkk/K6ELdHHVBfs=",
       "Microsoft.AspNetCore.Components.WebAssembly.sgbqg9g0bx.wasm": "sha256-dG/zQK3hrNaSkV456Z/t1pVrZFql2xOwiSIwuJoy1n0=",
