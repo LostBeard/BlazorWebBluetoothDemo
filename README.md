@@ -96,11 +96,11 @@ This project uses the following technologies:
 - **[ESP32-S3-WROOM](https://store.freenove.com/products/fnk0085)**: A powerful microcontroller with built-in Bluetooth capabilities.
 
 ## References
-- [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API)
-- [ESP32-S3-WROOM](https://store.freenove.com/products/fnk0085)
-- [PlatformIO](https://platformio.org/)
-- [Blazor WebAssembly](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor)
-- [Introduction to Bluetooth Low Energy](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt)
+- [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API) (developer.mozilla.org)
+- [ESP32-S3-WROOM](https://store.freenove.com/products/fnk0085) (store.freenove.com)
+- [PlatformIO](https://platformio.org/) (platformio.org)
+- [Blazor WebAssembly](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor) (dotnet.microsoft.com)
+- [Introduction to Bluetooth Low Energy](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt) (learn.adafruit.com)
 
 ## Contributing
 
