@@ -26,7 +26,8 @@ The `BlazorWebBluetoothDemo` project is a Blazor WebAssembly project that provid
 - Upload the `ESP32BLEApp` project to your ESP32-S3-WROOM board using [PlatformIO](https://platformio.org/install/ide?install=vscode).
 - Open the `BlazorWebBluetoothDemo` project in Visual Studio.
 - Build and run the Blazor WebAssembly project to start the demo in a new browser window.
-- Click `Connect to BLE Device` to `Pair` your ESP32-S3-WROOM board using the web app. Select `ESP32` from the list of Bluetooth devices.
+- Click `Connect to BLE Device` to see a list of available Bluetooth devices. 
+- Select `ESP32` to `Pair` your ESP32-S3-WROOM board to the Blazor web app.
 - The Blazor app will:
   - Request a specific GATT service running on the ESP32.
   - Get a specific Characteristic from that GATT service.
