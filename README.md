@@ -67,7 +67,7 @@ ESP32BLEApp/                            # ESP32 PlatformIO project
 │   ├── CMakeLists.txt                  # CMake list
 │   ├── main.cpp                        # Entry point
 ├── test/                               # PlatformIO test runner files
-├── sdkconfig.freenove_esp32_s3_wroom   # PlatformIO test runner files
+├── sdkconfig.freenove_esp32_s3_wroom   # ESP32-S3-WROOM configuration file
 └── platformio.ini                      # PlatformIO confiuration file
 BlazorWebBluetoothDemo/                 # Blazor WebAsembly project
 ├── wwwroot/                            # Static files
