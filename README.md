@@ -11,6 +11,7 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
+- [References](#references)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
@@ -93,6 +94,13 @@ This project uses the following technologies:
 - **[PlatformIO](https://platformio.org/)**: A framework for building interactive web applications using C#.
 - **C/C++**: The primary programming language used for the ESP32-S3 project.
 - **[ESP32-S3-WROOM](https://store.freenove.com/products/fnk0085)**: A powerful microcontroller with built-in Bluetooth capabilities.
+
+## References
+- [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API)
+- [ESP32-S3-WROOM](https://store.freenove.com/products/fnk0085)
+- [PlatformIO](https://platformio.org/)
+- [Blazor WebAssembly](https://dotnet.microsoft.com/en-us/apps/aspnet/web-apps/blazor)
+- [Introduction to Bluetooth Low Energy](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt)
 
 ## Contributing
 
