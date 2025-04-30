@@ -7,6 +7,7 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 ## Table of Contents
 
 - [Introduction](#introduction)
+- [Getting Started](#getting-started)
 - [Features](#features)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
@@ -21,13 +22,17 @@ The `ESP32BLEApp` project is a PlatformIO project that runs on the ESP32-S3-WROO
 The `BlazorWebBluetoothDemo` project is a Blazor WebAssembly project that provides the user interface for the demo. It includes pages for connecting to BLE devices, sending commands, and displaying received data. The web app uses the Web Bluetooth API to establish a connection with the ESP32-S3 and communicate with it.
 
 ## Getting Started
-- Upload the `ESP32BLEApp` project to your ESP32-S3-WROOM board using PlatformIO. Make sure to install the required libraries and dependencies. You can find the instructions for setting up PlatformIO [here](https://platformio.org/install).
-- Open the `BlazorWebBluetoothDemo` project in your preferred IDE (e.g., Visual Studio, Visual Studio Code).
-- Build and run the Blazor WebAssembly project. You can use the built-in development server or publish it to a web server.
-- Open the web application in a compatible web browser (e.g., Chrome, Edge) that supports the Web Bluetooth API.
-- Click `Connect to BLE Device` to `Pair` your ESP32-S3-WROOM board using the web app. You should see a list of available BLE devices as `ESP32`.
-- The Blazor app will connect to a GATT service running on the ESP32 and receive updated values from the ESP32 about once per second.
-- Click the `ON` and `OFF` buttons to control the ESP32's onboard LED
+- Clone the repo.
+- Upload the `ESP32BLEApp` project to your ESP32-S3-WROOM board using [PlatformIO](https://platformio.org/install/ide?install=vscode).
+- Open the `BlazorWebBluetoothDemo` project in Visual Studio.
+- Build and run the Blazor WebAssembly project to start the demo in a new browser window.
+- Click `Connect to BLE Device` to `Pair` your ESP32-S3-WROOM board using the web app. Select `ESP32` from the list of Bluetooth devices.
+- Click the `ON` and `OFF` buttons to control the ESP32's onboard LED accessed via antoher Charateristic.
+- The Blazor app will:
+  - Request a specific GATT service running on the ESP32.
+  - Get a specific Characteristic from that GATT service.
+  - Read the Characteristic's current value.
+  - Subscribe to value change events for that Characteristic and update the value shown.
 
 ## Features
 
