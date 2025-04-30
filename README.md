@@ -9,13 +9,11 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 - [Introduction](#introduction)
 - [Features](#features)
 - [Getting Started](#getting-started)
-- [Usage](#usage)
 - [Project Structure](#project-structure)
 - [Technologies Used](#technologies-used)
 - [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
-- [Releases](#releases)
 
 ## Introduction
 
