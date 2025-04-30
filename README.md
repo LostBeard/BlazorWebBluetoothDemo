@@ -104,22 +104,7 @@ This project uses the following technologies:
 
 ## Contributing
 
-We welcome contributions to enhance the **Blazor Web Bluetooth Demo**. If you have suggestions or improvements, please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch for your feature:
-   ```bash
-   git checkout -b feature/YourFeature
-   ```
-3. Make your changes and commit them:
-   ```bash
-   git commit -m "Add your feature"
-   ```
-4. Push to the branch:
-   ```bash
-   git push origin feature/YourFeature
-   ```
-5. Create a pull request.
+We welcome contributions to enhance the **Blazor Web Bluetooth Demo**. If you have suggestions or improvements, please open an issue or submit a pull request.
 
 ## License
 
