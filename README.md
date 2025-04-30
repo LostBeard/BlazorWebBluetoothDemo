@@ -23,15 +23,15 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 ## Introduction
 
 - The **Blazor Web Bluetooth Demo** demonstrates communication between a Blazor WASM web application and an ESP32-S3 using Bluetooth Low Energy communication via the [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API). 
-- The `ESP32BLEApp` folder contains a [VSCode with PlatformIO](https://platformio.org/install/ide?install=vscode) project that runs on the ESP32-S3-WROOM board and hosts a BLE GATT service that provides access to data and control over GPIO pins. 
-- The `BlazorWebBluetoothDemo` folder contains a Blazor WebAssembly project that uses the Web Bluetooth API to communicate with the GATT service running on the ESP32 wirelessly.
+- The `ESP32BLEApp` folder contains a [VSCode with PlatformIO](https://platformio.org/install/ide?install=vscode) project that runs on the ESP32-S3-WROOM board and hosts a BLE [GATT service](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services-640991) that provides access to data and control over GPIO pins. 
+- The `BlazorWebBluetoothDemo` folder contains a Blazor WebAssembly project that uses the Web Bluetooth API to communicate with the [GATT service](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services-640991) running on the ESP32 wirelessly.
 - [SpawnDev.BlazorJS](https://github.com/LostBeard/SpawnDev.BlazorJS) is used to access the [Web Bluetooth API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Bluetooth_API).
 
 ## Getting Started
 
 - Clone the repo.
 - Upload and run the `ESP32BLEApp` project on your ESP32-S3-WROOM board using [PlatformIO](https://platformio.org/install/ide?install=vscode).
-- The ESP32 app will run a BLE GATT service with two characteristics:
+- The ESP32 app will run a BLE [GATT service](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services-640991) with two [Characteristics](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics-640991):
   - `LED` - used to control the onboard LED.
   - `Sensor` - used to read the current value of a fake sensor.
 - Open the `BlazorWebBluetoothDemo` project in Visual Studio.
@@ -39,11 +39,11 @@ Welcome to the **Blazor Web Bluetooth Demo**! This project showcases how to use 
 - Click `Connect to BLE Device` to see a list of available Bluetooth devices. 
 - Select `ESP32` to `Pair` your ESP32-S3-WROOM board to the Blazor web app.
 - The Blazor app will:
-  - Request a specific GATT service running on the ESP32.
-  - Get a specific Characteristic from that GATT service.
-  - Read the Characteristic's current value.
-  - Subscribe to value change events for that Characteristic and update the value shown.
-- Click the `ON` and `OFF` buttons to control the ESP32's onboard LED accessed via another Characteristic.
+  - Request a specific [GATT service](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services-640991) running on the ESP32.
+  - Get a specific [Characteristic](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics-640991) from that [GATT service](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#services-640991).
+  - Read the [Characteristic's](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics-640991) current value.
+  - Subscribe to value change events for that [Characteristic](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics-640991) and update the value shown.
+- Click the `ON` and `OFF` buttons to control the ESP32's onboard LED accessed via another [Characteristic](https://learn.adafruit.com/introduction-to-bluetooth-low-energy/gatt#characteristics-640991).
 
 ## Features
 
